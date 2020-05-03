@@ -26,10 +26,11 @@ struct KdTree
 	{}
 
     void insertHelper(Node** node, uint depth, std::vector<float> point, int id)
+    // Passing in double pointer. Node here is a memory address
     {
         // Tree is empty
-        if(*node == NULL)
-            *node = new Node(point, id);
+        if(*node == NULL) // Deference it to see its value
+            *node = new Node(point, id); // Deference our node to set it
         else
         {
             // Calculate current dim
